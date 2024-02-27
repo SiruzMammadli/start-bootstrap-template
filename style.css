@@ -28,15 +28,17 @@ button {
     --primary-color: #2937f0;
 }
 
-.test_btn {
-  /* --bg-btn: #2937f0;
+/* .test_btn {
+  --bg-btn: #2937f0;
   --bg-btn-hover: #232fcc;
-  --br-radius: 100vmax; */
+  --br-radius: 100vmax;
+  --btn-text-color: white;
 
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--bg-btn);
+  color: var(--btn-text-color);
+  border: 1px solid black;
   padding: 8px 16px;
-  border-radius: var(--br-radius);
+  border-radius: 100vmax;
   transition: background-color 150ms ease-in-out;
 
   span {
@@ -47,7 +49,7 @@ button {
   &:hover {
     background-color: var(--primary-color);
   }
-}
+} */
 
 header {
   padding-block: 16px;
@@ -118,7 +120,7 @@ header {
   }
 }
 
-main {
+.hero {
   padding-block: 152px 0;
   height: 100dvh;
   background-color: #f8f9fa;
@@ -133,7 +135,6 @@ main {
     padding-right: 8px;
     border-radius: 8px;
     border: 2px solid #bbb;
-    margin-top: 24px;
 
     & > span {
       & > svg {
@@ -158,16 +159,54 @@ main {
       }
     }
   }
-}
 
-.hero_wrapper > div {
-    width: 300px;
-    height: 200px;
+  .hero_wrapper {
+    display: flex;
 
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: 50% 50%;
+    & > div {
+      padding-inline: 1.5rem;
+      width: 50%;
     }
+
+    & > div:first-of-type {
+
+      & > h1 {
+        font-size: 5rem;
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+      }
+
+      & > p {
+        font-size: 1.25rem;
+        color: #6c757d;
+        margin-bottom: 3rem;
+      }
+
+      & > div {
+        & > a {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    & > div:last-of-type {
+      & .masthead {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          height: 100%;
+        }
+
+        & > svg {
+          width: 370px;
+          height: 370px;
+          background-image: linear-gradient(135deg, #4D2DEB 20%, #9F1AE2 70%);
+          border-radius: 50%;
+        }
+      }
+    }
+  }
 }
